@@ -3,9 +3,9 @@ package aula2;
 public class Aluno {
     
     //  ATRIBUTOS
-    public double ra;
-    public double av1;
-    public double av2;
+    private double ra;  // PRIVADO
+    public double av1;  // PUBLICO
+    public double av2;  // PUBLICO
     
     //  MÉTODO CONSTRUTOR
 
@@ -14,6 +14,16 @@ public class Aluno {
         this.av1 = av1;
         this.av2 = av2;
     }
+    
+    // GETTER = MÉTODO ACESSOR
+    public double getRa() {
+        return ra;
+    }
+
+    public void setRa(double ra) {
+        this.ra = ra;
+    }
+    
     
     
     public void exibirInformacoes(){
