@@ -8,7 +8,7 @@ class GlobalVariaveis{
     public static void realizarQuina(){
         for(int i=0; i<10; i++){
             for( int j=0; j<5; j++){
-                quina[i][j] = POO_02.num_sorteio();
+                quina[i][j] = Aula4.num_sorteio();
                 //System.out.printf("%02d - ", GlobalVariaveis.quina[i][j]);
             }
             Arrays.sort(quina[i]);
@@ -26,13 +26,19 @@ public class Aula4 {
             System.out.printf("\t|.. Menu de exemplos ..|\n");
             System.out.printf("\tOpcao 1: Exemplo de notas.\n");
             System.out.printf("\tOpcao 2: Exemplo de repeticao.\n");
+            System.out.printf("\tOpcao 3: Exemplo de controles.\n");
+            System.out.printf("\tOpcao 4: Novos Sorteios.\n");
+            System.out.printf("\tOpcao 5: Listar sorteios.\n");
             System.out.printf("\tOpcao 0: Sair do sistema.\n");
             System.out.printf("\nEscolha uma opcao: ");
             escolha = ler.nextInt();            
             switch(escolha){
-                case 1:     notas();        break;
-                //case 2:     repeticao();    break;
-                //case 0:     sair();         break;
+                case 1:     notas();            break;
+                case 2:     repeticao();        break;
+                case 3:     controle();         break;
+                case 4:     sorteio();          break;
+                case 5:     listar_sorteio();   break;
+                case 0:     sair();             break;
                 
                 default:    System.out.printf("Opcao invalida\n");
             }
@@ -103,7 +109,7 @@ public class Aula4 {
         System.out.println("Até breve.\n");
     }
     
-    public static void exemplo_repeticao(){
+    public static void repeticao(){
         /*
             Do While(??)    // REPITA
             While(??)       // ENQUANTO 
@@ -127,7 +133,7 @@ public class Aula4 {
     }
     
     public static void controle(){
-        System.out.println("\nMétodo de controle\n");
+        System.out.println("\nMetodo de controle\n");
     }
 
 
