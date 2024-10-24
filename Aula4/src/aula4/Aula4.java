@@ -1,6 +1,21 @@
 package aula4;
 import java.util.*;
 
+class GlobalVariaveis{
+
+    static int quina[][]= new int [10][5];
+    
+    public static void realizarQuina(){
+        for(int i=0; i<10; i++){
+            for( int j=0; j<5; j++){
+                quina[i][j] = POO_02.num_sorteio();
+                //System.out.printf("%02d - ", GlobalVariaveis.quina[i][j]);
+            }
+            Arrays.sort(quina[i]);
+        }   
+         
+    }
+}    
 public class Aula4 {
 
     public static void main(String[] args) {
@@ -62,5 +77,82 @@ public class Aula4 {
                 valorMedio = (nota1 + nota2) / 2;
             }
         return valorMedio;
+    }
+
+    
+    public static void listar_sorteio(){
+        
+        
+        System.out.println("\n-------------------------------------");
+        System.out.println("Listar sorteio\n");
+       
+        for(int i=0; i<10; i++){
+            for( int j=0; j<5; j++){
+                if( j < 4 )
+                    System.out.printf("%02d - ", GlobalVariaveis.quina[i][j]);
+                else
+                    System.out.printf("%02d", GlobalVariaveis.quina[i][j]);
+            }
+            System.out.println("");
+        } 
+    }
+   
+    public static void sair(){
+        System.out.println("\n-------------------------------------");
+        System.out.println("Obrigado por utilizar o nosso sistema\n");
+        System.out.println("Até breve.\n");
+    }
+    
+    public static void exemplo_repeticao(){
+        /*
+            Do While(??)    // REPITA
+            While(??)       // ENQUANTO 
+            For(???)        // PARA 
+        */
+        int x = 1;
+        do{
+            System.out.println("do while() " + x);
+            x++;
+        }while( x<=10 );
+        
+        x = 1;
+        while( x<=10 ){
+            System.out.println("while() " + x);
+            x++;
+        }
+        
+        for( x=1; x<=10; x++ ){
+            System.out.println("for() " + x);
+        }
+    }
+    
+    public static void controle(){
+        System.out.println("\nMétodo de controle\n");
+    }
+
+
+        
+    public static int num_sorteio(){
+        Random num_aleatorio = new Random();
+        int numero = (num_aleatorio.nextInt(60))+1;
+        return numero;
+    }
+    
+    public static void sorteio(){
+        
+        GlobalVariaveis.realizarQuina();
+        listar_sorteio();     
+        
+        /*int i;
+        int bingo[] = new int[5];
+        
+        System.out.print("\nSorteio do bingo (ultimo sorteio):\n");
+        
+        for( i=0; i<5; i++){
+            bingo[i] = GlobalVariaveis.quina[9][i];
+            System.out.print("Numero gerado (" + (i+1) + "): " + bingo[i] + "\n");
+        }
+        */
+        
     }
 }
